@@ -18,15 +18,15 @@
       </p>
 
     <v-container id="vContainer">
-      <v-text-field placeholder="Morse me..." v-model="message" v-on:input="parseMorse"></v-text-field>
+      <v-text-field id="textField" placeholder="Morse me..." v-model="message" v-on:input="parseMorse"></v-text-field>
     </v-container>
 
     <p>{{ morse }}</p>
 
     <v-dialog v-model="dialog" width="500">
       <v-card>
-        <v-card-title text-align-center><v-icon class="mr-3">info</v-icon>Welcome, to the desert of the morse</v-card-title>
-        <v-card-text>The morser uses three spaces (time-units) for letter breaks and seven spaces (time-units) for word breaks following international standards.</v-card-text>
+        <v-card-title text-align-center><v-icon class="mr-3">info</v-icon>Spacing</v-card-title>
+        <v-card-text>The morse output utilizes three spaces (time-units) for letter breaks and seven spaces (time-units) for word breaks following international standards.</v-card-text>
       </v-card>
     </v-dialog>
 
@@ -63,21 +63,21 @@ export default {
 
   methods: {
     parseMorse: function() {
-      var splitArray = this.message.split('')
-      var morse = []
-      var i
+      var splitArray = this.message.split('');
+      var morse = [];
+      var i;
 
       for (i in splitArray){
-        morse[i] = this.morseData[splitArray[i].toUpperCase()]
+        morse[i] = this.morseData[splitArray[i].toUpperCase()];
         }
 
       for(i in morse){
         if(typeof morse[i] == "undefined"){
-          morse[i] = '\xa0'
+          morse[i] = '\xa0';
         }
       }
       
-      this.morse = morse.join('\xa0\xa0\xa0')
+      this.morse = morse.join('\xa0\xa0\xa0');
 
     },
 
@@ -88,18 +88,24 @@ export default {
       )
     },
     toggleTheme: function() {
-      this.$vuetify.theme.dark = !this.$vuetify.theme.dark
-      
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
     }
   },
+
+  mounted: function(){
+    document.getElementById('textField').focus();
+  }
 };
 </script>
 
 <style scoped>
 
+*{
+  animation: fadeIn ease-in 0.6s;
+}
+
 #pageHeader{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  animation: fadeIn ease-in 0.5s;
 }
 
 .icons{
@@ -120,7 +126,6 @@ export default {
 #vContainer{
   margin-bottom: 100px;
   width: 50%;
-  animation: fadeIn ease-in 0.5s;
 }
 
 p{
