@@ -1,5 +1,5 @@
 {
-  "name": "morsenode",
+  "name": "morseus",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
+    "express": "^4.17.1",
     "vue": "^2.6.11",
     "vuetify": "^2.2.11"
   },
