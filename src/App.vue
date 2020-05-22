@@ -1,8 +1,10 @@
 <template>
   <v-app>
     <h1>Morsel</h1>
-    <v-text-field color="deep-purple accent-3" style="width: 75%; align-self: center;" placeholder="Morse me..." v-model="message" v-on:input="parseMorse"></v-text-field>
-    <h1 id="morseData">{{ morse }}</h1>
+    <v-container id="vContainer">
+      <v-text-field color="deep-purple accent-3" placeholder="Morse me..." v-model="message" v-on:input="parseMorse"></v-text-field>
+    </v-container>
+    <p>{{ morse }}</p>
   </v-app>
 </template>
 
@@ -31,7 +33,7 @@ export default {
                     '7':'--...', '8':'---..', '9':'----.', 
                     '0':'-----', ', ':'--..--', '.':'.-.-.-', 
                     '?':'..--..', '/':'-..-.', '-':'-....-', 
-                    '(':'-.--.', ')':'-.--.-'
+                    '(':'-.--.', ')':'-.--.-',
     },
   }),
 
@@ -45,7 +47,7 @@ export default {
         morse[i] = this.morseData[splitArray[i].toUpperCase()]
       }
 
-      this.morse = morse.join(' ')
+      this.morse = morse.join('\xa0\xa0\xa0')
     }
   }
 
@@ -58,10 +60,26 @@ h1{
   text-align: center;
   margin-top: 20px;
   margin-bottom: 100px;
-  animation: fadeIn ease-in 1s;
+  animation: fadeIn ease-in 0.5s;
 }
 
+#input-4{
+  margin-bottom: 0;
+  width: 50%; 
+  align-self: center;
+  animation: fadeIn ease-in 0.5s;
+}
 
+#vContainer{
+  margin-bottom: 100px;
+  width: 50%;
+}
+
+p{
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
 
 @keyframes fadeIn{
   from{
