@@ -1,4 +1,4 @@
-# morsevue
+# morsenode
 
 ## Project setup
 ```
