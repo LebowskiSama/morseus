@@ -2,11 +2,14 @@
   <v-app>
 
     <span id="pageIcons">
-      <v-btn width=0 class="icons" id="info-icon" dark>
+      <v-btn class="icons" id="info-icon" @click="dialog=true" text small>
         <v-icon>info</v-icon>
       </v-btn>
-      <v-btn class="icons" id="github-icon" dark>
-        <v-icon >mdi-github</v-icon>
+      <v-btn class="icons" @click="redirect" text small>
+        <v-icon>mdi-github</v-icon>
+      </v-btn>
+      <v-btn class="icons" @click="toggleTheme" text small>
+        <v-icon>invert_colors</v-icon>
       </v-btn>
     </span>
 
@@ -15,10 +18,17 @@
       </p>
 
     <v-container id="vContainer">
-      <v-text-field color="deep-purple accent-3" placeholder="Morse me..." v-model="message" v-on:input="parseMorse"></v-text-field>
+      <v-text-field placeholder="Morse me..." v-model="message" v-on:input="parseMorse"></v-text-field>
     </v-container>
 
     <p>{{ morse }}</p>
+
+    <v-dialog v-model="dialog" width="500">
+      <v-card>
+        <v-card-title text-align-center><v-icon class="mr-3">info</v-icon>Spacing</v-card-title>
+        <v-card-text>The morse output uses three spaces (time-units) for letter breaks and seven spaces (time-units) for word breaks following international standards.</v-card-text>
+      </v-card>
+    </v-dialog>
 
   </v-app>
 </template>
@@ -29,10 +39,9 @@ export default {
 
   data: () => ({
 
-    message: "",
-
+    dialog: false,
+    message: null,
     morse: null,
-
     morseData: {
         'A':'.-', 'B':'-...', 
                     'C':'-.-.', 'D':'-..', 'E':'.', 
@@ -70,8 +79,19 @@ export default {
       
       this.morse = morse.join('\xa0\xa0\xa0')
 
+    },
+
+    redirect: function() {
+      window.open(
+        'https://www.github.com/LebowskiSama/morsel',
+        '_blank'
+      )
+    },
+    toggleTheme: function() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+      
     }
-  }
+  },
 };
 </script>
 
@@ -87,14 +107,14 @@ export default {
 }
 
 #pageIcons{
-  margin-top: 5px;
+  margin-top: 10px;
   margin-right: 5px;
   margin-bottom: 50px;
 }
 
 #info-icon{
-  margin-left: 20px;
-  margin-right: 5px;
+  margin-left: 5px;
+  margin-right: 10px;
 }
 
 #vContainer{
