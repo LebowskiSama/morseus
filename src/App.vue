@@ -26,7 +26,7 @@
     <v-dialog v-model="dialog" width="500">
       <v-card>
         <v-card-title text-align-center><v-icon class="mr-3">info</v-icon>Welcome, to the desert of the morse</v-card-title>
-        <v-card-text>The morser output uses three spaces (time-units) for letter breaks and seven spaces (time-units) for word breaks following international standards.</v-card-text>
+        <v-card-text>The morser uses three spaces (time-units) for letter breaks and seven spaces (time-units) for word breaks following international standards.</v-card-text>
       </v-card>
     </v-dialog>
 
