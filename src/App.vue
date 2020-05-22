@@ -14,7 +14,7 @@
     </span>
 
       <p id="pageHeader">
-        <span>MorseNode</span>
+        <span>Morseus</span>
       </p>
 
     <v-container id="vContainer">
@@ -25,8 +25,8 @@
 
     <v-dialog v-model="dialog" width="500">
       <v-card>
-        <v-card-title text-align-center><v-icon class="mr-3">info</v-icon>Spacing</v-card-title>
-        <v-card-text>The morse output uses three spaces (time-units) for letter breaks and seven spaces (time-units) for word breaks following international standards.</v-card-text>
+        <v-card-title text-align-center><v-icon class="mr-3">info</v-icon>Welcome, to the desert of the morse</v-card-title>
+        <v-card-text>The morser output uses three spaces (time-units) for letter breaks and seven spaces (time-units) for word breaks following international standards.</v-card-text>
       </v-card>
     </v-dialog>
 
@@ -83,7 +83,7 @@ export default {
 
     redirect: function() {
       window.open(
-        'https://www.github.com/LebowskiSama/morsel',
+        'https://www.github.com/LebowskiSama/morseus',
         '_blank'
       )
     },
