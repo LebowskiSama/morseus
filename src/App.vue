@@ -14,7 +14,7 @@
     </span>
 
       <p id="pageHeader">
-        <span>Morsel</span>
+        <span>MorseNode</span>
       </p>
 
     <v-container id="vContainer">
