@@ -114,7 +114,6 @@ export default {
 
 #pageIcons{
   margin-top: 1vh;
-  margin-right: 1vw;
   margin-bottom: 8vh;
 }
 
