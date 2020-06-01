@@ -21,7 +21,7 @@
       <v-text-field id="textField" placeholder="Morse me..." v-model="message" v-on:input="parseMorse"></v-text-field>
     </v-container>
 
-    <p>{{ morse }}</p>
+    <p id="morseResult">{{ morse }}</p>
 
     <v-dialog v-model="dialog" width="500">
       <v-card>
@@ -113,9 +113,9 @@ export default {
 }
 
 #pageIcons{
-  margin-top: 10px;
-  margin-right: 5px;
-  margin-bottom: 50px;
+  margin-top: 1vh;
+  margin-right: 1vw;
+  margin-bottom: 10vh;
 }
 
 #info-icon{
@@ -124,7 +124,7 @@ export default {
 }
 
 #vContainer{
-  margin-bottom: 100px;
+  margin-bottom: 10vh;
   width: 50%;
 }
 
@@ -132,6 +132,10 @@ p{
   font-size: 40px;
   font-weight: bold;
   text-align: center;
+}
+
+#morseResult{
+  font-size: 4vw;
 }
 
 @keyframes fadeIn{
