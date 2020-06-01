@@ -131,7 +131,7 @@ export default {
 #morseResult{
   text-align: center;
   font-weight: bold;
-  font-size: 3vw;
+  font-size: 35px;
 }
 
 @keyframes fadeIn{
