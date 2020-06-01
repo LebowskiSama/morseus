@@ -69,7 +69,7 @@ export default {
 
       for (i in splitArray){
         morse[i] = this.morseData[splitArray[i].toUpperCase()];
-        }
+      }
 
       for(i in morse){
         if(typeof morse[i] == "undefined"){
