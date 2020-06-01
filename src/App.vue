@@ -124,7 +124,7 @@ export default {
 }
 
 #pageHeader{
-  font-size: 3vw;
+  font-size: 40px;
   font-weight: bold;
   text-align: center;
 }
@@ -132,7 +132,7 @@ export default {
 #morseResult{
   text-align: center;
   font-weight: bold;
-  font-size: 2vw;
+  font-size: 3vw;
 }
 
 @keyframes fadeIn{
