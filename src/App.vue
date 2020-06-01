@@ -115,12 +115,7 @@ export default {
 #pageIcons{
   margin-top: 1vh;
   margin-right: 1vw;
-  margin-bottom: 10vh;
-}
-
-#info-icon{
-  margin-left: 5px;
-  margin-right: 10px;
+  margin-bottom: 8vh;
 }
 
 #vContainer{
@@ -128,13 +123,15 @@ export default {
   width: 50%;
 }
 
-p{
-  font-size: 40px;
+#pageHeader{
+  font-size: 5vmax;
   font-weight: bold;
   text-align: center;
 }
 
 #morseResult{
+  text-align: center;
+  font-weight: bold;
   font-size: 4vw;
 }
 
